@@ -4,28 +4,34 @@ I have used [DummyJSON APIs](https://dummyjson.com/) with configuration- driven 
 
 ## Structure
 
-project/
+```project/
 │── configuration/
 │ └── config.ini # Stores URL, credentials
 │
 │── utilities/
 │ └── read_properties.py # Reads values from config.ini
 │
+│── conftest.py # Pytest fixtures (login, base_url, etc.)
+│
 │── tests/
 │ ├── test_login.py # Tests login API (/auth/login)
 │ ├── test_products.py # Tests product endpoints (/products)
 │ └── test_current_user.py # Tests current user endpoint (/auth/me)
 │
-│── conftest.py # Pytest fixtures (login, base_url, etc.)
 │── pytest.ini # Pytest config (markers, options)
 │── requirements.txt # Python dependencies
 │── README.md # Project documentation
+```
 ---
 
 ## Install dependencies
 
 ```pip install -r requirements.txt```
 
+
+## Git Repo
+
+```https://github.com/varuu09/Frejun```
 
 ## Fixtures
 Defined in conftest.py:
@@ -56,6 +62,6 @@ Products API /products
 -Invalid product ID
 
 Current User API /auth/me
-with valid token → returns user details
-without token → returns 401 Unauthorized
+-with valid token → returns user details
+-without token → returns 401 Unauthorized
 
